@@ -1,8 +1,5 @@
 {
-  "plugins": [],
-  "envs": {
-    "production": {
-      "MY_SECRET": "value"
-    }
+  "build": {
+    "postInstall": "playwright install"
   }
 }
