@@ -1,8 +1,8 @@
 {
-  "build": {
-    "commands": ["pip install -r requirements.txt"]
-  },
-  "start": {
-    "cmd": "python app.py"
+  "plugins": [],
+  "envs": {
+    "production": {
+      "MY_SECRET": "value"
+    }
   }
 }
