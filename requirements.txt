@@ -1,6 +1,6 @@
-playwright
-beautifulsoup4
-pandas
-tinydb
 Flask
-gunicorn
+tinydb
+pandas
+beautifulsoup4
+playwright
+python-dotenv
