@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+
+# Virtual envs
+myvenv/
+venv/
+
+# Environment variables
+.env
+
+# Playwright drivers
+**/playwright/**/driver
+myvenv/
+*.py[cod]
+__pycache__/
+.env
