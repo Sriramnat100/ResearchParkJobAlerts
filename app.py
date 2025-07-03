@@ -12,17 +12,20 @@ email_password = os.getenv("EMAIL_PASSWORD")
 extraction = ExtractListings()
 emailer = Email(email_password)
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+
+# Allow requests from Vercel and localhost
+CORS(app, origins=[
+    "https://research-park-job-alerts.vercel.app",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
+])
 
 @app.route("/api/subscribe", methods=["POST"])
 def subscribe():
     """API endpoint to subscribe to job alerts"""
     try:
-
-        #getting the email from the frontend
         data = request.get_json()
         email = data.get("email")
-        
         
         if not email:
             return jsonify({"error": "Email is required"}), 400
