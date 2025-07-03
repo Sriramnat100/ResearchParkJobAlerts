@@ -14,7 +14,7 @@ export default function Home() {
     setMessage("")
 
     try {
-      const response = await fetch('http://3.137.215.199:8000/api/subscribe', {
+      const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
