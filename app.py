@@ -27,16 +27,18 @@ def subscribe():
         data = request.get_json()
         email = data.get("email")
         
+
+        print("recieved")
         if not email:
             return jsonify({"error": "Email is required"}), 400
         
-        # Send confirmation email
-        emailer.send_email(
-            "kingicydiamond@gmail.com", 
-            email, 
-            "Job Alerts Confirmation", 
-            "Welcome to Research Park's Job Alerts. Whenever a job alert releases on research park, you will hear first! However, before you can enroll, you must be approved by the creator of this program!"
-        )
+        # # Send confirmation email
+        # emailer.send_email(
+        #     "kingicydiamond@gmail.com", 
+        #     email, 
+        #     "Job Alerts Confirmation", 
+        #     "Welcome to Research Park's Job Alerts. Whenever a job alert releases on research park, you will hear first! However, before you can enroll, you must be approved by the creator of this program!"
+        # )
         
         # Add email to database
         extraction.add_email(email)

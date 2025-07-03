@@ -24,9 +24,11 @@ class ExtractListings:
 
 
         #dbs
-        self.db = TinyDB("sent_jobs.json")
+
         self.q = Query()
-        self.email_db = TinyDB("emails.json")
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        self.email_db = TinyDB(os.path.join(BASE_DIR, "emails.json"))
+        self.db = TinyDB(os.path.join(BASE_DIR, "sent_jobs.json"))
         self.email_q = Query()
 
         #emails
@@ -71,6 +73,7 @@ class ExtractListings:
 
     def add_email(self, email):
         if not self.email_db.contains(self.email_q.address == email):
+            print(f"Adding email: {email}")
             self.email_db.insert({"address": email})
 
     def get_all_emails(self):
@@ -168,11 +171,8 @@ class ExtractListings:
         else:
             print("email not sent")
 
-tester = ExtractListings()
-tester.add_email("sriramnat123@gmail.com")
-tester.add_email("lerak55333@ofacer.com")
-tester.sendEmails()
-        
+
+
 
 
    

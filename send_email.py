@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 import os
 
 
-
 class Email:
     def __init__(self, key):
         self.key = key
