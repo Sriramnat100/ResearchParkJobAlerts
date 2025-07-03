@@ -13,7 +13,30 @@ venv/
 
 # Playwright drivers
 **/playwright/**/driver
-myvenv/
-*.py[cod]
-__pycache__/
-.env
+
+# Key files
+*.pem
+
+# Data files
+emails.json
+sent_jobs.json
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build files
+dist/
+build/
+*.egg-info/
